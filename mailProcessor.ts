@@ -5,7 +5,7 @@ import { Transporter } from 'nodemailer'
 import { Handler } from 'aws-lambda';
 
 export const handler: Handler = async function (event: any): Promise <any> {
-    console.log("Input event object !!"); console.log(event);
+    console.log("Input event object !!"); console.log(JSON.stringify(event));
     let result: any = null;
     const smtpTransportOptions: SMTPTransport.Options = {
         'service': "gmail",
@@ -30,12 +30,13 @@ export const handler: Handler = async function (event: any): Promise <any> {
             (errMail ? reject(errMail) : resolve(mailInfo));
         });
     }).then((data: any): void => {
-        console.log("Mailing promise resolved !!"); console.log(data);
+        console.log("Mailing promise resolved !!"); console.log(JSON.stringify(data));
         result = data;
     }).catch((error: Error): void => {
-        console.log("Mailing promise rejected !!"); console.log(error);
+        console.log("Mailing promise rejected !!"); console.log(JSON.stringify(error));
         result = error;
     }).finally((): void => { console.log("This was a promise !!") });
     smtpTransport.close();
+    console.log("Final lambda execution result !!"); console.log(JSON.stringify(result));
     return (result);
 };
