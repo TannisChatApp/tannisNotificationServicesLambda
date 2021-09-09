@@ -5,6 +5,7 @@ import { Transporter } from 'nodemailer'
 import { Handler } from 'aws-lambda';
 
 export const handler: Handler = async function (event: any): Promise <any> {
+    console.log("Input event object !!"); console.log(event);
     let result: any = null;
     const smtpTransportOptions: SMTPTransport.Options = {
         'service': "gmail",
