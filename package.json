@@ -1,0 +1,36 @@
+{
+  "name": "tannisnotificationserviceslambda",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tannis app notification services node lambda module",
+  "keywords": [
+    "node",
+    "typescript",
+    "aws",
+    "lambda"
+  ],
+  "author": {
+    "name": "Palash Sarkar",
+    "email": "palashsarkar0007@gmail.com",
+    "url": "https://github.com/Tejas07PSK"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TannisChatApp/tannisUserServicesLambda.git"
+  },
+  "dependencies": {
+    "aws-sdk": "~2.937.0",
+    "nodemailer": "~6.6.3",
+    "googleapis": "~85.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.83",
+    "@types/nodemailer": "^6.4.4",
+    "@types/node": "^15.12.5"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.11.1"
+  }
+}
